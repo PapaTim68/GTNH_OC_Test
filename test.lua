@@ -1,7 +1,7 @@
 local component = require("component")
 local sides = require("sides")
 
-local inv = component.inventory_controller
+inv = component.inventory_controller
 
 items = inv.getAllStacks(sides.east)
 

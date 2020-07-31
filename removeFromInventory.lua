@@ -5,9 +5,10 @@ trans = component.transposer
 player_side = sides.west
 chest_side = sides.east
 
-function findEmptySlot(INV)
-    for slot_n = 1, INV.count() do
-        slot_c = INV[slot_n]
+function findEmptySlot(SIDE)
+    local inv = trans.getAllStacks(SIDE)
+    for slot_n = 1, inv.count() do
+        slot_c = inv[slot_n]
         if slot_c == nil then
             return slot_n
         end
@@ -33,6 +34,7 @@ end
 
 function removeItemsFromInv(ITEM)
     local player_inv = trans.getAllStacks(player_side)
+    local chest_inv = trans.getAllStacks(chest_side)
     local items = findItems(player_inv,ITEM)
     if items ~= nil then
         for j,v in pairs(items) do

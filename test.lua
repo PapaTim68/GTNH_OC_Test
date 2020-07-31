@@ -5,7 +5,7 @@ local inv = component.inventory_controller
 
 items = inv.getAllStacks(sides.east)
 
-for item_n = 0, items.count() do
+for item_n = 1, items.count() do
     item = items[item_n]
     print("--ITEM " .. item_n .. " START--")
     for k,v in pairs(item) do

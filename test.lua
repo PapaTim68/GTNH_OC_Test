@@ -7,7 +7,7 @@ items = inv.getAllStacks(sides.east)
 
 for item_n = 1, items.count() do
     item = items[item_n]
-    if item == nil do
+    if item == nil then
         print("--EMPTY ".. item_n .. " SLOT--")
     else
         print("--ITEM " .. item_n .. " START--")

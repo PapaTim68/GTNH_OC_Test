@@ -32,16 +32,18 @@ function transfareToChest(SLOT,COUNT)
     trans.transferItem(player_side,chest_side,COUNT,SLOT,findEmptySlot(chest_side))
 end
 
-function removeItemsFromInv(ITEM)
+function removeItemsFromInvtory(ITEM)
     local player_inv = trans.getAllStacks(player_side)
     local chest_inv = trans.getAllStacks(chest_side)
     local items = findItems(player_inv,ITEM)
     if items ~= nil then
         for j,v in pairs(items) do
-            count = player_inv[items[v]]["size"]
-            transfareToChest(items[v],count)
+            if items[v] ~= nil then
+                count = player_inv[items[v]]["size"]
+                transfareToChest(items[v],count)
+            end
         end
     end
 end
 
-removeItemsFromInv("dirt")
+removeItemsFromInvtory("minecraft:dirt")

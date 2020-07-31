@@ -11,6 +11,6 @@ for item_n = 1, items.count() do
     for k,v in pairs(item) do
         print(k,v)
     end
-    print("--ITEM " .. i .." END--") 
+    print("--ITEM " .. item_n .." END--") 
 end
 
